@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PortugalVistoCheckerTraySystem
+namespace PortugalVisaSEFCheckerTraySystem
 {
     public partial class FormLog : Form
     {
@@ -23,11 +23,6 @@ namespace PortugalVistoCheckerTraySystem
             lblLastExcution.Text = Global.LastExecution.ToString();
             lblNextExecution.Text = Global.NextExecution.ToString();
             lblInterval.Text = Global.Interval.ToString() + " minutos";
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -1,29 +1,22 @@
-﻿using PortugalVistoCheckerTraySystem.Properties;
+﻿using PortugalVisaSEFCheckerTraySystem.Properties;
 using System;
 using System.Windows.Forms;
 
-namespace PortugalVistoCheckerTraySystem
+namespace PortugalVisaSEFCheckerTraySystem
 {
     class ProcessIcon : IDisposable
 	{
-		/// <summary>
-		/// The NotifyIcon object.
-		/// </summary>
 		NotifyIcon ni;
 
-        int minutesInterval = 60;
+        const int minutesInterval = 60;
 
-        int interval =  60 * 1000; // milliseconds to one hour
+        int interval;
 
-        /// <summary>
-		/// Initializes a new instance of the <see cref="ProcessIcon"/> class.
-		/// </summary>
-		public ProcessIcon()
+        public ProcessIcon()
 		{
-			// Instantiate the NotifyIcon object.
 			ni = new NotifyIcon();
 
-            interval = interval * minutesInterval;
+            interval = 1000 * 60 * minutesInterval;
         }
 
 		/// <summary>
@@ -34,7 +27,7 @@ namespace PortugalVistoCheckerTraySystem
 			// Put the icon in the system tray and allow it react to mouse clicks.			
 			ni.MouseClick += new MouseEventHandler(ni_MouseClick);
 			ni.Icon = Resources.PT;
-			ni.Text = "Portugal Visto Checker";
+			ni.Text = "Portugal Visa SEF Checker";
 			ni.Visible = true;
 
 			// Attach a context menu.
@@ -54,16 +47,16 @@ namespace PortugalVistoCheckerTraySystem
 
         private void MyTimer_Tick(object sender, EventArgs e)
         {   
-            CheckStatus();
-            Global.LastExecution = DateTime.Now;
+            CheckStatus();            
             Global.NextExecution = DateTime.Now.AddMinutes(minutesInterval);
         }
 
         public void CheckStatus()
         {
             ni.Icon = Resources.PT;
-            Global.LastResult = VistoChecker.Do();
+            Global.LastResult = HttpChecker.Do();
             ChangeIcon(Global.LastResult.ToLower().Trim());
+            Global.LastExecution = DateTime.Now;
         }
 
         private void ChangeIcon(string state)
@@ -91,23 +84,15 @@ namespace PortugalVistoCheckerTraySystem
             }
         }
 
-        /// <summary>
-        /// Releases unmanaged and - optionally - managed resources
-        /// </summary>
         public void Dispose()
 		{
 			// When the application closes, this will remove the icon from the system tray immediately.
 			ni.Dispose();
 		}
 
-		/// <summary>
-		/// Handles the MouseClick event of the ni control.
-		/// </summary>
-		/// <param name="sender">The source of the event.</param>
-		/// <param name="e">The <see cref="System.Windows.Forms.MouseEventArgs"/> instance containing the event data.</param>
 		void ni_MouseClick(object sender, MouseEventArgs e)
 		{
-                        
+            // Event to handle mouse click
 		}
 	}
 }

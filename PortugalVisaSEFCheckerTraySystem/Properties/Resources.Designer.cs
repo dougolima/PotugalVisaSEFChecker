@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PortugalVistoCheckerTraySystem.Properties {
+namespace PortugalVisaSEFCheckerTraySystem.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace PortugalVistoCheckerTraySystem.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PortugalVistoCheckerTraySystem.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PortugalVisaSEFCheckerTraySystem.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

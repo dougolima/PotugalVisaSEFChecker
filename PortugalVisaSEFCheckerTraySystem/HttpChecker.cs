@@ -1,5 +1,5 @@
 ﻿using HtmlAgilityPack;
-using PortugalVistoCheckerTraySystem.Properties;
+using PortugalVisaSEFCheckerTraySystem.Properties;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,9 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PortugalVistoCheckerTraySystem
+namespace PortugalVisaSEFCheckerTraySystem
 {
-    public class VistoChecker
+    public class HttpChecker
     {
         private const string URL = "https://pedidodevistos.mne.pt/VistosOnline/VerificarEstado";
         private const string URLWithParameters = "https://pedidodevistos.mne.pt/VistosOnline/VerificarEstado?user=#USR#&password=#PWD#&accao=estado&lang=PT";

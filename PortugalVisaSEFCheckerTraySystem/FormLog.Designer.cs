@@ -1,4 +1,4 @@
-﻿namespace PortugalVistoCheckerTraySystem
+﻿namespace PortugalVisaSEFCheckerTraySystem
 {
     partial class FormLog
     {
@@ -56,7 +56,6 @@
             this.lblLastExcution.Size = new System.Drawing.Size(73, 19);
             this.lblLastExcution.TabIndex = 1;
             this.lblLastExcution.Text = "Date Hour";
-            this.lblLastExcution.Click += new System.EventHandler(this.label2_Click);
             // 
             // lblLastResult
             // 
@@ -135,7 +134,7 @@
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Execution Logs";
+            this.Text = "Execution Info";
             this.Load += new System.EventHandler(this.FormLog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

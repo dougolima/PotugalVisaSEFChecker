@@ -7,7 +7,7 @@ using System.Threading;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 
-namespace PortugalVistoCheckerTraySystem
+namespace PortugalVisaSEFCheckerTraySystem
 {
     static class Program
     {
@@ -24,7 +24,7 @@ namespace PortugalVistoCheckerTraySystem
         static void Main()
         {
             bool createdNew = true;
-            using (Mutex mutex = new Mutex(true, "MyApplicationName", out createdNew))
+            using (Mutex mutex = new Mutex(true, "PortugalVisaSEFCheckerTraySystem", out createdNew))
             {
                 if (createdNew)
                 {

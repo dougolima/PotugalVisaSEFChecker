@@ -2,7 +2,7 @@
 using System.Windows.Forms;
 using System.Timers;
 
-namespace PortugalVistoCheckerTraySystem
+namespace PortugalVisaSEFCheckerTraySystem
 {
     class ContextMenus
     {

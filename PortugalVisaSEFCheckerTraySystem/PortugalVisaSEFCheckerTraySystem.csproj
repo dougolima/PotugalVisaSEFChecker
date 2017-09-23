@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{91444B36-C4D5-4B3E-9582-1D3C962666AA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PortugalVistoCheckerTraySystem</RootNamespace>
-    <AssemblyName>PortugalVistoCheckerTraySystem</AssemblyName>
+    <RootNamespace>PortugalVisaSEFCheckerTraySystem</RootNamespace>
+    <AssemblyName>PortugalVisaSEFCheckerTraySystem</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Checker.cs" />
+    <Compile Include="HttpChecker.cs" />
     <Compile Include="ContextMenus.cs" />
     <Compile Include="FormLog.cs">
       <SubType>Form</SubType>
