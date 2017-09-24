@@ -40,5 +40,14 @@ namespace PortugalVisaSEFCheckerTraySystem.Properties {
                 return ((string)(this["password"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public int interval {
+            get {
+                return ((int)(this["interval"]));
+            }
+        }
     }
 }

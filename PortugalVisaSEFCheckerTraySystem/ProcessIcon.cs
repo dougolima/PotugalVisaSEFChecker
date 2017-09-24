@@ -8,15 +8,13 @@ namespace PortugalVisaSEFCheckerTraySystem
 	{
 		NotifyIcon ni;
 
-        const int minutesInterval = 60;
-
         int interval;
 
         public ProcessIcon()
 		{
 			ni = new NotifyIcon();
 
-            interval = 1000 * 60 * minutesInterval;
+            interval = 1000 * 60 * Settings.Default.interval;
         }
 
 		/// <summary>
@@ -41,14 +39,14 @@ namespace PortugalVisaSEFCheckerTraySystem
             checkForTime.Tick+= new EventHandler(MyTimer_Tick);
             checkForTime.Start();
 
-            Global.Interval = minutesInterval;
-            Global.NextExecution = DateTime.Now.AddMinutes(minutesInterval);
+            Global.Interval = Settings.Default.interval;
+            Global.NextExecution = DateTime.Now.AddMinutes(Global.Interval);
         }
 
         private void MyTimer_Tick(object sender, EventArgs e)
         {   
             CheckStatus();            
-            Global.NextExecution = DateTime.Now.AddMinutes(minutesInterval);
+            Global.NextExecution = DateTime.Now.AddMinutes(Global.Interval);
         }
 
         public void CheckStatus()
